@@ -1,0 +1,55 @@
+<div style="color:white; font-family: OpenSans, tahoma, arial, sans-serif;padding: 0;margin: 0 ;overflow: hidden;;width:90%;height:90%;position:relative;">
+<canvas id="renderCanvas" touch-action="none" style="width: 100%; height: 100%"></canvas> <!--//touch-action="none" for best results from PEP-->
+</div>
+<script src="/babylonTest/babylon.js"></script>
+<script src="/babylonTest/MyPath.js"></script>
+<script src="/babylonTest/MoveCameraThrough.js"></script>
+<script src="/babylonTest/JQuery/jquery-3.4.1.min.js"></script>
+
+
+
+<!-- ensemble des boutons de la visualisation globale de la station-->
+
+<div class="station-group">
+<button id="btn0">Retour</button>
+<button id="btn1">EM1</button>
+<button id="btn2">EM2</button>
+<button id="btn3">EM3</button>
+<button id="btn4">EM4</button>
+<button id="btn10">Alarm</button>
+</div>
+<!-- ###################################################-->
+
+
+
+
+<!-- ensemble des boutons de l'escalier mécanique-->
+
+
+<div class="escalator-group">
+  <button id="btn6">Monter</button>
+  <button id="btn7">Descendre</button>
+</div>
+
+<!--###################################################
+
+<script>
+    var x =document.getElementsByClassName("escalator-group");
+    x[0].hidden=true;
+</script>
+-->
+
+<form action="">
+<input type="button" id="btn8" value="cam1 on" style="color:blue">
+<input type="button" id="btn9" value="cam2 on" style="color:blue">
+<input type="button" id="btn10" value="cam3 on" style="color:blue">
+</form>
+
+
+
+
+<script src="/babylonTest/station.js"></script>
+    
+
+
+
