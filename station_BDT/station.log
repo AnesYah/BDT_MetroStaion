@@ -10,6 +10,265 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		Mat Weight Precision:  2
 		texture directory   :  C:\xampp\htdocs\babylonTest\station_BDT\
 	Python World class constructor completed
+	processing begun of node:  SketchUp.007
+	processing begun of node:  instance_0.004
+	processing begun of node:  group_0.003
+	processing begun of mesh:  group_5.058
+		processing begun of Standard material:  Metal_Steel_Textured_White
+			Diffuse texture found "Texture.041"
+				Image texture found, type:  diffuseTexture, mapped using: "ID67"
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_1.005
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  72
+		num normals        :  72
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  group_10.001
+		processing begun of Standard material:  Metal_Aluminum_Anodized
+			Diffuse texture found "Texture.040"
+				Image texture found, type:  diffuseTexture, mapped using: "ID122"
+		num positions      :  5466
+		num normals        :  5466
+		num uvs            :  10932
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  9480
+	processing begun of mesh:  group_2.026
+		processing begun of Standard material:  Metal_Seamed
+			Diffuse texture found "Texture.039"
+				Image texture found, type:  diffuseTexture, mapped using: "ID25"
+		num positions      :  336
+		num normals        :  336
+		num uvs            :  672
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  648
+	processing begun of mesh:  group_3.023
+		processing begun of Standard material:  Metal_Rough
+			Diffuse texture found "Texture.038"
+				Image texture found, type:  diffuseTexture, mapped using: "ID39"
+		num positions      :  1248
+		num normals        :  1248
+		num uvs            :  2496
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  group_4.007
+		registered as also a user of material:  Metal_Aluminum_Anodized
+		num positions      :  5466
+		num normals        :  5466
+		num uvs            :  10932
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  9480
+	processing begun of mesh:  group_5.057
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.056
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  36
+		num normals        :  36
+		num uvs            :  72
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  66
+	processing begun of mesh:  group_5.055
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.054
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  64
+		num indices        :  24
+	processing begun of mesh:  group_5.053
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.052
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.051
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.050
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.049
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.048
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.047
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.046
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.045
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.044
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.043
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.042
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.041
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.040
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.037
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_5.036
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  16
+		num normals        :  16
+		num uvs            :  32
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_6.001
+		processing begun of Standard material:  material.003
+		num positions      :  12
+		num normals        :  12
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  24
+	processing begun of mesh:  group_7.001
+		registered as also a user of material:  material.003
+		num positions      :  8
+		num normals        :  8
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  18
+	processing begun of mesh:  group_8.001
+		registered as also a user of material:  Metal_Seamed
+		num positions      :  336
+		num normals        :  336
+		num uvs            :  672
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  648
+	processing begun of mesh:  group_9.001
+		registered as also a user of material:  Metal_Rough
+		num positions      :  1248
+		num normals        :  1248
+		num uvs            :  2496
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  group_5.035
+		registered as also a user of material:  Metal_Steel_Textured_White
+		num positions      :  10
+		num normals        :  10
+		num uvs            :  20
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  18
 	processing begun of node:  Empty.003
 	processing begun of mesh:  EMERGENCY_STOP_SURROUND_STICKER.003
 		processing begun of Standard material:  EMERGENCY_STOP_SURROUND_STICKER
@@ -24,12 +283,12 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num indices        :  6
 	processing begun of mesh:  RedButton.003
 		processing begun of Standard material:  Color_A06
-		num positions      :  3050
-		num normals        :  3050
-		num uvs            :  6100
+		num positions      :  1544
+		num normals        :  1544
+		num uvs            :  3088
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  11706
+		num indices        :  3264
 	processing begun of mesh:  Yellow.003
 		processing begun of Standard material:  Material.010
 		num positions      :  5221
@@ -99,20 +358,20 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num indices        :  6
 	processing begun of mesh:  RedButton
 		registered as also a user of material:  Color_A06
-		num positions      :  3050
-		num normals        :  3050
-		num uvs            :  6100
+		num positions      :  1544
+		num normals        :  1544
+		num uvs            :  3088
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  11706
+		num indices        :  3264
 	processing begun of mesh:  Yellow
 		registered as also a user of material:  Material.010
-		num positions      :  5221
-		num normals        :  5221
-		num uvs            :  10442
+		num positions      :  2613
+		num normals        :  2613
+		num uvs            :  5226
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  17250
+		num indices        :  5370
 	WARNING: The following object (type - FONT) is not currently exportable thus ignored: text.001
 	WARNING: The following object (type - FONT) is not currently exportable thus ignored: text
 	processing begun of node:  SketchUp.006
@@ -127,9 +386,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  132
 	processing begun of mesh:  group_10.015
-		processing begun of Standard material:  Metal_Aluminum_Anodized
-			Diffuse texture found "Texture.040"
-				Image texture found, type:  diffuseTexture, mapped using: "ID122"
+		registered as also a user of material:  Metal_Aluminum_Anodized
 		num positions      :  5466
 		num normals        :  5466
 		num uvs            :  10932
@@ -137,9 +394,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  9480
 	processing begun of mesh:  group_2.029
-		processing begun of Standard material:  Metal_Seamed
-			Diffuse texture found "Texture.039"
-				Image texture found, type:  diffuseTexture, mapped using: "ID25"
+		registered as also a user of material:  Metal_Seamed
 		num positions      :  336
 		num normals        :  336
 		num uvs            :  672
@@ -147,9 +402,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  648
 	processing begun of mesh:  group_3.026
-		processing begun of Standard material:  Metal_Rough
-			Diffuse texture found "Texture.038"
-				Image texture found, type:  diffuseTexture, mapped using: "ID39"
+		registered as also a user of material:  Metal_Rough
 		num positions      :  1248
 		num normals        :  1248
 		num uvs            :  2496
@@ -165,9 +418,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  9480
 	processing begun of mesh:  group_5.198
-		processing begun of Standard material:  Metal_Steel_Textured_White
-			Diffuse texture found "Texture.041"
-				Image texture found, type:  diffuseTexture, mapped using: "ID67"
+		registered as also a user of material:  Metal_Steel_Textured_White
 		num positions      :  16
 		num normals        :  16
 		num uvs            :  32
@@ -327,7 +578,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  24
 	processing begun of mesh:  group_6.006
-		processing begun of Standard material:  material.003
+		registered as also a user of material:  material.003
 		num positions      :  12
 		num normals        :  12
 		num uvs            :  0
@@ -377,14 +628,6 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  36
-	processing begun of mesh:  group_5.029
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  8
-		num normals        :  8
-		num uvs            :  16
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  18
 	processing begun of mesh:  group_9.014
 		registered as also a user of material:  Metal_Rough
 		num positions      :  1248
@@ -2981,249 +3224,6 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  168
-	processing begun of node:  SketchUp.007
-	processing begun of node:  instance_0.008
-	processing begun of node:  group_0.007
-	processing begun of mesh:  group_5.199
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_1.009
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  72
-		num normals        :  72
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  132
-	processing begun of mesh:  group_10.016
-		registered as also a user of material:  Metal_Aluminum_Anodized
-		num positions      :  5466
-		num normals        :  5466
-		num uvs            :  10932
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  9480
-	processing begun of mesh:  group_2.030
-		registered as also a user of material:  Metal_Seamed
-		num positions      :  336
-		num normals        :  336
-		num uvs            :  672
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  648
-	processing begun of mesh:  group_3.027
-		registered as also a user of material:  Metal_Rough
-		num positions      :  1248
-		num normals        :  1248
-		num uvs            :  2496
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  2472
-	processing begun of mesh:  group_4.011
-		registered as also a user of material:  Metal_Aluminum_Anodized
-		num positions      :  5466
-		num normals        :  5466
-		num uvs            :  10932
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  9480
-	processing begun of mesh:  group_5.134
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.133
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  56
-		num normals        :  56
-		num uvs            :  112
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  108
-	processing begun of mesh:  group_5.132
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.131
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  64
-		num indices        :  24
-	processing begun of mesh:  group_5.130
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.129
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.128
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.127
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.126
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.125
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.123
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.122
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.121
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.120
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.119
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.118
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.117
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.116
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.115
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_5.114
-		registered as also a user of material:  Metal_Steel_Textured_White
-		num positions      :  16
-		num normals        :  16
-		num uvs            :  32
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_6.007
-		registered as also a user of material:  material.003
-		num positions      :  12
-		num normals        :  12
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  24
-	processing begun of mesh:  group_7.007
-		registered as also a user of material:  material.003
-		num positions      :  8
-		num normals        :  8
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  18
-	processing begun of mesh:  group_8.009
-		registered as also a user of material:  Metal_Seamed
-		num positions      :  336
-		num normals        :  336
-		num uvs            :  672
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  648
-	processing begun of mesh:  group_9.016
-		registered as also a user of material:  Metal_Rough
-		num positions      :  1248
-		num normals        :  1248
-		num uvs            :  2496
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  2472
 	processing begun of node:  SketchUp.002
 	processing begun of mesh:  group_0.002
 		processing begun of Standard material:  edge_color000255.002
@@ -12474,15 +12474,14 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num colors         :  0
 		num indices        :  0
 	processing begun of mesh:  group_3.010
-		processing begun of Standard material:  Concrete_Gray2
-			Diffuse texture found "Texture"
-				Image texture found, type:  diffuseTexture, mapped using: "ID190"
+		processing begun of Standard material:  Material
 		num positions      :  76
 		num normals        :  76
 		num uvs            :  152
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  120
+		WARNING: # of 0 area faces found:  2
 	processing begun of mesh:  group_3.009
 		processing begun of Standard material:  Concrete_Form_4x8
 			Diffuse texture found "Texture.001"
@@ -12501,6 +12500,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  132
+		WARNING: # of 0 area faces found:  10
 	processing begun of mesh:  group_3.007
 		registered as also a user of material:  material
 		num positions      :  32
@@ -12509,6 +12509,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  60
+		WARNING: # of 0 area faces found:  6
 	processing begun of mesh:  group_3.006
 		registered as also a user of material:  material
 		num positions      :  31
@@ -12525,8 +12526,11 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  444
+		WARNING: # of 0 area faces found:  4
 	processing begun of mesh:  group_3.004
-		registered as also a user of material:  Concrete_Gray2
+		processing begun of Standard material:  Concrete_Gray2
+			Diffuse texture found "Texture"
+				Image texture found, type:  diffuseTexture, mapped using: "ID148"
 		num positions      :  492
 		num normals        :  492
 		num uvs            :  984
@@ -12549,6 +12553,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  444
+		WARNING: # of 0 area faces found:  4
 	processing begun of mesh:  group_3.001
 		registered as also a user of material:  material
 		num positions      :  58
@@ -12557,6 +12562,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  132
+		WARNING: # of 0 area faces found:  9
 	processing begun of mesh:  group_3
 		registered as also a user of material:  Concrete_Gray2
 		num positions      :  476
@@ -12565,6 +12571,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  900
+		WARNING: # of 0 area faces found:  2
 	processing begun of mesh:  group_4.003
 		registered as also a user of material:  material
 		num positions      :  21
@@ -12645,6 +12652,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  132
+		WARNING: # of 0 area faces found:  7
 	processing begun of mesh:  group_2.003
 		registered as also a user of material:  material
 		num positions      :  21
@@ -12661,6 +12669,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  444
+		WARNING: # of 0 area faces found:  2
 	processing begun of mesh:  group_2.001
 		registered as also a user of material:  material
 		num positions      :  27
@@ -12669,6 +12678,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  60
+		WARNING: # of 0 area faces found:  8
 	processing begun of mesh:  group_2
 		registered as also a user of material:  Concrete_Gray2
 		num positions      :  470
@@ -12677,6 +12687,7 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  894
+		WARNING: # of 0 area faces found:  2
 	processing begun of camera (UniversalCamera):  skp_camera_Last_Saved_SketchUp_View
 	processing begun of camera (UniversalCamera):  Camera
 	processing begun of light (POINT):  Point.001
@@ -12685,4 +12696,4 @@ Exporter version: 5.6.4, Blender version: 2.79 (sub 0)
 ========= Writing of scene file started =========
 ========= Writing of scene file completed =========
 ========= end of processing =========
-elapsed time:  1 min, 48.2329 secs
+elapsed time:  1 min, 30.7813 secs

@@ -19,6 +19,7 @@ var smallStep=[];
 var bigStep=[];
 var niv=[];
 var niv0,niv1,niv2;
+var compteur=false;
 
 
 
@@ -98,12 +99,12 @@ $(document).ready(function()
 
 //pour contrôler invisibilité 
 
-var hide = function(node) {
-    BABYLON.Animation.CreateAndStartAnimation("hide", node, "visibility", 30, 30, 1, 0.2, 0)
+var hide = function(node, from, to) {
+    BABYLON.Animation.CreateAndStartAnimation("hide", node, "visibility", 30, 30, from, to, 0)
 }
 
-var show = function(node) {
-    BABYLON.Animation.CreateAndStartAnimation("hide", node, "visibility", 30, 30, 0.2, 1, 0)
+var show = function(node, from, to) {
+    BABYLON.Animation.CreateAndStartAnimation("hide", node, "visibility", 30, 30, to, from, 0)
 }
 
 var UniCam =function()
@@ -140,44 +141,68 @@ $(document).ready(function()
        $("#btn0").click(function() 
        		{
        			UseCamera1();
+                compteur=false;
        		})
        $("#btn1").click(function() 
        		{
        			if(activeCamera==="StandardCamera")
 		            {
-		                //camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.64568)); //EM1 position
-                        //let ToEM1 = new BABYLON.Vector3(-4,2.5,0.1); // to see EM1
-                        camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.73034));// emergency button position 
-                        let ToEM1 = new BABYLON.Vector3(-4.84679, 1.0 ,0.59525); // camera position to see emergency button
-
+		                camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.64568)); //EM1 position
+                        let ToEM1 = new BABYLON.Vector3(-4.2,1,0.6); // to see EM1                                                  à charger
+                        //camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.73034));// emergency button position 
+                        //let ToEM1 = new BABYLON.Vector3(-4.84679, 1.0 ,0.59525); // camera position to see emergency button
+                        /*
+                        niv0Set.forEach(mesh=>
+                            {
+                                hide(mesh);
+                            }) 
+                        
+                        niv1Set.forEach(mesh=>
+                            {
+                                hide(mesh);
+                            }) 
+                            */
+                    if(!compteur)
+                       {
+                           niv2Set.forEach(mesh=>
+                                {
+                                    hide(mesh,1,0.2);
+                                })
+                           compteur=true;
+                        }
+                       /*
+                        niv3Set.forEach(mesh=>
+                            {
+                                hide(mesh);
+                            }) 
+                            */
 
 		                let MyCurve= MyPath(camera1.position,ToEM1);
 		                MoveCameraThrough(scene, camera1, MyCurve, false);
-              			//for(var i=1;i<3;i++)
-                            //{
+              		
                                
-                                niv1.forEach(mesh=>
-                                   {mesh.isVisible=false});
-                                niv2.forEach(mesh=>
-                                   {mesh.isVisible=false});
+                       
                               
-                            //}
 		            }
        		})
        $("#btn2").click(function() 
            {
                 if(activeCamera==="StandardCamera")
                         {
-                            //camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.92568)); // EM2 position
-                           // let ToEM2 = new BABYLON.Vector3(-4,2.5,1.7); // to see EM2
-                           camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.82784)); // emergency button position
-                            let ToEM2 = new BABYLON.Vector3(-4.84679, 1.0 ,0.97525); // camera position to see emergency button
+                            camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.92568)); // EM2 position
+                            let ToEM2 = new BABYLON.Vector3(-4.2,1,1.1); // to see EM2
+                           // camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.82784)); // emergency button position
+                          //  let ToEM2 = new BABYLON.Vector3(-4.84679, 1.0 ,0.97525); // camera position to see emergency button
                             let MyCurve= MyPath(camera1.position,ToEM2);
                             MoveCameraThrough(scene, camera1, MyCurve, false);
-                            for(var i=1;i<3;i++)
-                                {
-                                    hide(niv[i]);
-                                }
+                            if(!compteur)
+                            {
+                                niv2Set.forEach(mesh=>
+                                    {
+                                        hide(mesh,1,0.2);
+                                    })
+                                compteur=true;
+                            }
                         }
 
            })
@@ -185,16 +210,33 @@ $(document).ready(function()
            {
               if(activeCamera==="StandardCamera")
                         {
-                           // camera1.setTarget (new BABYLON.Vector3(5.76483, 1.249576, 1.36558)); // EM3 position
-                           // let ToEM3 = new BABYLON.Vector3(3.1624,2.5,2.25982); // to see EM3
-                            camera1.setTarget (new BABYLON.Vector3(4.45554,1.01576,1.10003)); // emergency button position
-                            let ToEM3 = new BABYLON.Vector3(4.22819,0.90002,1.50356); // camera position to see emergency button
+                            camera1.setTarget (new BABYLON.Vector3(5.76483, 1.249576, 1.36558)); // EM3 position
+                            let ToEM3 = new BABYLON.Vector3(3.4624,1.3,1.7); // to see EM3
+                            //camera1.setTarget (new BABYLON.Vector3(4.45554,1.01576,1.10003)); // emergency button position
+                            //let ToEM3 = new BABYLON.Vector3(4.22819,0.90002,1.50356); // camera position to see emergency button
                             let MyCurve= MyPath(camera1.position,ToEM3);
                             MoveCameraThrough(scene, camera1, MyCurve, false);
-                            for(var i=1;i<3;i++)
+                            if(!compteur)
+                            {
+                               niv2Set.forEach(mesh=>
                                 {
-                                    hide(niv[i]);
-                                }
+                                    hide(mesh,1,0.1);
+                                })
+                                niv3Set.forEach(mesh=>
+                                {
+                                    hide(mesh,1,0.1);
+                                })
+                                compteur=true;
+                            }
+                            else
+                            {
+                                niv3Set.forEach(mesh=>
+                                {
+                                    hide(mesh,1,0.1);
+                                })
+
+                            }
+                            
                         }
 
            })
@@ -202,16 +244,33 @@ $(document).ready(function()
             {
                 if(activeCamera==="StandardCamera")
                         {
-                            //camera1.setTarget (new BABYLON.Vector3(5.76483, 1.249576, 0.263288)); // EM4 position
-                            //let ToEM4 = new BABYLON.Vector3(3.1624,2.5,-0.80018); to see EM4
-                            camera1.setTarget (new BABYLON.Vector3(4.45554,1.01576,0.43794));
-                            let ToEM4 = new BABYLON.Vector3(4.22819,0.90002,0.03356);
+                            camera1.setTarget (new BABYLON.Vector3(5.76483, 1.249576, 0.263288)); // EM4 position
+                            let ToEM4 = new BABYLON.Vector3(3.4624,1.3,-0.2); //to see EM4
+                            //camera1.setTarget (new BABYLON.Vector3(4.45554,1.01576,0.43794));
+                            //let ToEM4 = new BABYLON.Vector3(4.22819,0.90002,0.03356);
                             let MyCurve= MyPath(camera1.position,ToEM4);
                             MoveCameraThrough(scene, camera1, MyCurve, false);
-                           for(var i=1;i<3;i++)
+                            if(!compteur)
+                            {
+                               niv2Set.forEach(mesh=>
                                 {
-                                    hide(niv[i]);
-                                }
+                                    hide(mesh,1,0.1);
+                                })
+                                niv3Set.forEach(mesh=>
+                                {
+                                    hide(mesh,1,0.1);
+                                })
+                                compteur=true;
+                            }
+                            else
+                            {
+                                niv3Set.forEach(mesh=>
+                                {
+                                    hide(mesh,1,0.1);
+                                })
+
+                            }
+                           
                         }
 
 
@@ -579,14 +638,16 @@ var UseCamera1=function()
                 var MyCurve= MyPath(camera1.position,ToBegining);
                 MoveCameraThrough(scene, camera1, MyCurve);
 
-	   	        //scene.beginAnimation(camera1, 400, 0, false);
-              // for(var i=1;i<3;i++)
-                         //   {
-                                niv1.forEach(mesh=>
-                                   {mesh.isVisible=true});
-                                niv2.forEach(mesh=>
-                                   {mesh.isVisible=true});
-                         //   }
+             
+
+                         niv2Set.forEach(mesh=>
+                            {
+                                show(mesh,1,0);
+                            })
+                        niv3Set.forEach(mesh=>
+                            {
+                                show(mesh,1,0);
+                            })  
 	   		}
 	   		
 
@@ -604,14 +665,60 @@ var CreateScene=function()
 
         BABYLON.SceneLoader.Append("/babylonTest/station_BDT/", "station.babylon",scene,function(scene)
         	{
+
                     stairMaterial=scene.getMaterialByID("station.Metal_Steel_Textured_White");
+
                     scene.clearColor = new BABYLON.Color3(.1, 1, 1);// modifier la couleur de background 
-                    niv[0]=scene.getMeshByID("SketchUp");
+
+                    // call level 0 (quai) with separate meshes
+                    niv[0]=scene.getMeshByID("SketchUp.009");
                     niv0=niv[0].getChildMeshes();
-                	niv[1]=scene.getMeshByID("SketchUp.001");
+                    niv0Set=new Array();
+                    niv0.forEach(mesh=>
+                                {
+                                    if(mesh.sourceMesh == undefined) 
+                                        {
+                                            niv0Set.push(mesh);
+                                        }         
+                                });
+
+                    // call level 1 with separate meshes
+                	niv[1]=scene.getMeshByID("SketchUp");
                     niv1=niv[1].getChildMeshes();
-                	niv[2]=scene.getMeshByID("SketchUp.002");
+                    niv1Set = new Array();
+                    niv1.forEach(mesh=>
+                                {
+                                    if(mesh.sourceMesh == undefined) 
+                                        {
+                                            niv1Set.push(mesh);
+                                        }         
+                                });
+                    // call level 2 with separate meshes
+                    niv[2]=scene.getMeshByID("SketchUp.001");
+                    console.log(niv[2]);
                     niv2=niv[2].getChildMeshes();
+                    niv2Set = new Array();
+                    niv2.forEach(mesh=>
+                                {
+                                    if(mesh.sourceMesh == undefined)
+                                        {
+                                            niv2Set.push(mesh);
+                                        }
+                                
+                                });
+
+                    // call level 3 with separate meshes
+                    niv[3]=scene.getMeshByID("SketchUp.002");
+                    niv3=niv[3].getChildMeshes();
+                    niv3Set = new Array();
+                    niv3.forEach(mesh=>
+                                {
+                                    if(mesh.sourceMesh == undefined)
+                                        {
+                                            niv3Set.push(mesh);
+                                        }
+                                
+                                });
 
                     redButton = scene.getMeshByID("RedButton.001");
                     redButtonMaterial=redButton.material;
@@ -619,7 +726,6 @@ var CreateScene=function()
 
                     redBox = new BABYLON.StandardMaterial("material", scene);
                     redBox.diffuseColor=new BABYLON.Color3.Black();
-                    redBox.specularColor= new BABYLON.Color3.Black();
 
                   //  console.log(redButton.position.x + "" + redButton.position.y + "" + redButton.position.z);
 
@@ -628,7 +734,7 @@ var CreateScene=function()
         		 	smallStep[0] = new stair(90,.2,.05,.07);				
 				  	bigStep[0] = new stair(140,.4,.06,.1);
 				  	bigStep[1] = new stair(140,.4,.06,.1);
-       			  	smallStep[0].DynStair(-1,1.1,-5.7,0.64,Math.PI/2,-1);		    	//EM niveau2 --gauche 
+       			  	smallStep[0].DynStair(-1,1.1,-5.7,0.68,Math.PI/2,-1);		    	//EM niveau2 --gauche 
                   	smallStep[1].DynStair(-1,1.1,-5.7,0.93,Math.PI/2,-1);  	       //EM niveau2  --droite
                   	bigStep[0].DynStair(-1,1.5,6,1.36,Math.PI/2,1);				  //EM niveau3   --gauche
                   	bigStep[1].DynStair(-1,1.5,6,0.25,Math.PI/2,1); 
@@ -638,22 +744,22 @@ var CreateScene=function()
 
 
 
-              /*
-                    boxMaterial[0] = new BABYLON.StandardMaterial("material", scene);
-                    boxMaterial[1] = new BABYLON.StandardMaterial("material", scene);
-                    boxMaterial[2] = new BABYLON.StandardMaterial("material", scene);
-                    boxMaterial[0].diffuseColor= new BABYLON.Color3.Red();
-                    boxMaterial[0].specularColor= new BABYLON.Color3.Black();
+                    /*
+                        boxMaterial[0] = new BABYLON.StandardMaterial("material", scene);
+                        boxMaterial[1] = new BABYLON.StandardMaterial("material", scene);
+                        boxMaterial[2] = new BABYLON.StandardMaterial("material", scene);
+                        boxMaterial[0].diffuseColor= new BABYLON.Color3.Red();
+                        boxMaterial[0].specularColor= new BABYLON.Color3.Black();
 
-                    boxMaterial[1].diffuseColor= new BABYLON.Color3.Green();
-                    boxMaterial[1].specularColor= new BABYLON.Color3.Black();
+                        boxMaterial[1].diffuseColor= new BABYLON.Color3.Green();
+                        boxMaterial[1].specularColor= new BABYLON.Color3.Black();
 
-                    boxMaterial[2].diffuseColor= new BABYLON.Color3.Blue();
-                    boxMaterial[2].specularColor=new BABYLON.Color3.Black();
-               */
+                        boxMaterial[2].diffuseColor= new BABYLON.Color3.Blue();
+                        boxMaterial[2].specularColor=new BABYLON.Color3.Black();
+                    */
 
 
-                })
+            })
         
       				var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(4, 6, 1), scene);// ajouter de light
 
@@ -689,7 +795,7 @@ scene.registerBeforeRender(function()
 	{
 		if(direction!=0)
 			{
-			  	smallStep[0].DynStair(direction,1.1,-5.7,0.64,Math.PI/2,-1);
+			  	smallStep[0].DynStair(direction,1.1,-5.7,0.68,Math.PI/2,-1);0
 			  	smallStep[1].DynStair(-direction,1.1,-5.7,0.93,Math.PI/2,-1);
                 bigStep[0].DynStair(direction,1.5,6,1.36,Math.PI/2,1);               //EM niveau3   --gauche
                 bigStep[1].DynStair(direction,1.5,6,0.25,Math.PI/2,1); 
