@@ -20,6 +20,10 @@ var bigStep=[];
 var niv=[];
 var niv0,niv1,niv2;
 var compteur=false;
+var clickedPosition= new BABYLON.Vector3.Zero();
+var escalierMecanique;
+var cameraOffset=1.1643;
+
 
 
 
@@ -116,6 +120,7 @@ var UniCam =function()
 	    				scene.activeCamera=camera2;
 	    				camera2.attachControl(canvas, false);
 	    			}
+
                     camera2.position = camera1.position.clone();
                     camera2.setTarget(camera1.getTarget().clone());
 	}
@@ -147,10 +152,14 @@ $(document).ready(function()
        		{
        			if(activeCamera==="StandardCamera")
 		            {
-		                camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.64568)); //EM1 position
-                        let ToEM1 = new BABYLON.Vector3(-4.2,1,0.6); // to see EM1                                                  à charger
-                        //camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.73034));// emergency button position 
-                        //let ToEM1 = new BABYLON.Vector3(-4.84679, 1.0 ,0.59525); // camera position to see emergency button
+		               // camera1.setTarget (new BABYLON.Vector3(-5.72051, 1.254, 0.64568)); //EM1 position
+                        //let ToEM1 = new BABYLON.Vector3(-4.2,1,0.6); // to see EM1                                                  à charger
+                       // camera1.setTarget (new BABYLON.Vector3(-5.02894,0.90570, 0.73034));// emergency button position 
+                       var target = new BABYLON.Vector3(escalierMecanique.position.x,escalierMecanique.position.y,escalierMecanique.position.z);
+                       camera1.setTarget(target);
+                       let ToEM1 = new BABYLON.Vector3(escalierMecanique.position.x+cameraOffset*Math.cos(-escalierMecanique.rotation.y),escalierMecanique.position.y ,escalierMecanique.position.z+cameraOffset*Math.sin(-escalierMecanique.rotation.y)); // camera position to see emergency button
+                        let MyCurve= MyPath(camera1.position,ToEM1);
+                        MoveCameraThrough(scene, camera1, MyCurve, false);
                         /*
                         niv0Set.forEach(mesh=>
                             {
@@ -177,8 +186,8 @@ $(document).ready(function()
                             }) 
                             */
 
-		                let MyCurve= MyPath(camera1.position,ToEM1);
-		                MoveCameraThrough(scene, camera1, MyCurve, false);
+		                
+
               		
                                
                        
@@ -296,13 +305,28 @@ $(document).ready(function()
 
 
 	      	})
+
+        var togggle=false;
         $("#btn10").click(function() 
             {
+                if(!togggle)
+                {
 
                 let redButtonGoal=new BABYLON.Vector3(0,0,-10);
                 let MyRedButtonPath=new MyPath(redButton.position,redButtonGoal);
                 MoveButton(scene,redButton,MyRedButtonPath,true);
-                redButtonMesh.blink(500,redBox);
+                redButtonMesh.blink(500, YellowBox, RedBox);
+            }
+            else if(togggle)
+            {
+                let redButtonGoal=new BABYLON.Vector3(0,0,-10);
+                let MyRedButtonPath=new MyPath(redButtonGoal,redButton.position);
+                MoveButton(scene,redButton,MyRedButtonPath,false);
+                redButtonMesh.stopBlink(1000, RedBox);
+
+            }
+            togggle=!togggle;
+
             })
       })
 
@@ -373,15 +397,15 @@ var changeMaterial= function(obj,newMaterial)
                 }
 
 
-function Mesh(obj,material)
+function Mesh(obj)
     {
         this._obj=obj;
-        this._material=material;
+        //this._material=material;
         this.interval=null;
     }
 
 
-Mesh.prototype.blink = function(delay,box) 
+Mesh.prototype.blink = function(delay, YellowBox, RedBox) 
     {        
 
         this.interval=(()=>
@@ -393,11 +417,14 @@ Mesh.prototype.blink = function(delay,box)
                             if(Toggle)
                             {
                     
-                                changeMaterial(this._obj,box);
+                               // changeMaterial(this._obj,box);
+                                this._obj.material.emissiveColor=YellowBox;
                             }
                             else
                                 {
-                                    changeMaterial(this._obj,this._material);
+                                    //changeMaterial(this._obj,this._material);
+                                    this._obj.material.emissiveColor=RedBox;
+
                                 }
 
                             Toggle=!Toggle;
@@ -412,26 +439,32 @@ Mesh.prototype.stopBlink=function(duration)
     {
         setTimeout(()=>
                         {
-                            this._obj.material=this._material;
+                            this._obj.material.emissiveColor = BABYLON.Color3.Black();
                             clearInterval(this.interval);
                         },duration);
     }
 
 
 
-function stair(numSteps,stepWidth,stepHeight,stepDepth)
+function stair(numSteps,stepWidth,stepHeight,stepDepth,stepYrotation, escalierPosition)
 	{
 		this.numSteps=numSteps;
 		this.stepWidth=stepWidth;
 		this.stepHeight=stepHeight;
 		this.stepDepth=stepDepth;
+        this.escalierPosition=escalierPosition;
 		var step=BABYLON.MeshBuilder.CreateBox('', {width:this.stepWidth, height:this.stepHeight, depth:this.stepDepth}, scene);
 		step.material=stairMaterial;
 		var stepss=[];
+        var stairs = new BABYLON.TransformNode('stairs', scene);
+       // stairs.position=escalierPosition;
+        console.log(stairs.position);
+
 		for(var i = 0; i < numSteps; i++)
 			{
                 var inst = step.createInstance('step'+i);
-                inst.isPickable=true;
+                inst.parent = stairs;
+               // stairs.rotation.y = stepYrotation;
                 stepss.push(inst);
 			}
 		//hide step
@@ -616,10 +649,12 @@ oaJsApi.dpConnect("fan4.:_original.._value",true,
 
 var InitCamera= function()
 	{
-		camera1 =  new BABYLON.ArcRotateCamera("Camera",0, 0, 20, new BABYLON.Vector3.Zero(), scene);
+		camera1 =  new BABYLON.ArcRotateCamera("Camera",0, 0, 10, new BABYLON.Vector3.Zero(), scene);
 		camera2 = new BABYLON.UniversalCamera("Camera", new BABYLON.Vector3(0,10,0),scene);
 		camera2.minZ=.01;
 		camera1.minZ=.01;
+        camera1.wheelPrecision = 200;
+        camera2.wheelPrecision = 200;
 
 
 
@@ -634,7 +669,7 @@ var UseCamera1=function()
    		if (activeCamera==="StandardCamera")
 	   		{
                 camera1.setTarget(new BABYLON.Vector3.Zero());
-                var ToBegining = new BABYLON.Vector3(0,25,-3);
+                var ToBegining = new BABYLON.Vector3(0,15,-3);
                 var MyCurve= MyPath(camera1.position,ToBegining);
                 MoveCameraThrough(scene, camera1, MyCurve);
 
@@ -661,18 +696,20 @@ var CreateScene=function()
         canvas = document.getElementById("renderCanvas"); // Get the canvas element 
         engine = new BABYLON.Engine(canvas, true); 
         scene= new BABYLON.Scene(engine);
+
         InitCamera();
 
-        BABYLON.SceneLoader.Append("/babylonTest/station_BDT/", "station.babylon",scene,function(scene)
+        BABYLON.SceneLoader.Append("/babylonTest/station_BDT/", "station2.babylon",scene,function(scene)
         	{
+             
+                   stairMaterial=scene.getMaterialByID("station2.Metal_Steel_Textured_White");
+                   
 
-                    stairMaterial=scene.getMaterialByID("station.Metal_Steel_Textured_White");
-
-                    scene.clearColor = new BABYLON.Color3(.1, 1, 1);// modifier la couleur de background 
-
-                    // call level 0 (quai) with separate meshes
+                    escalierMecanique = scene.getMeshByID("EscalierMecanique1");
+                    var escalierMecaniquePosition= escalierMecanique.position;
                     niv[0]=scene.getMeshByID("SketchUp.009");
                     niv0=niv[0].getChildMeshes();
+                   
                     niv0Set=new Array();
                     niv0.forEach(mesh=>
                                 {
@@ -681,10 +718,12 @@ var CreateScene=function()
                                             niv0Set.push(mesh);
                                         }         
                                 });
+                    
 
                     // call level 1 with separate meshes
-                	niv[1]=scene.getMeshByID("SketchUp");
+                    niv[1]=scene.getMeshByID("SketchUp");
                     niv1=niv[1].getChildMeshes();
+                    
                     niv1Set = new Array();
                     niv1.forEach(mesh=>
                                 {
@@ -693,10 +732,11 @@ var CreateScene=function()
                                             niv1Set.push(mesh);
                                         }         
                                 });
+                    
                     // call level 2 with separate meshes
                     niv[2]=scene.getMeshByID("SketchUp.001");
-                    console.log(niv[2]);
                     niv2=niv[2].getChildMeshes();
+                    
                     niv2Set = new Array();
                     niv2.forEach(mesh=>
                                 {
@@ -706,10 +746,12 @@ var CreateScene=function()
                                         }
                                 
                                 });
+                    
 
                     // call level 3 with separate meshes
                     niv[3]=scene.getMeshByID("SketchUp.002");
                     niv3=niv[3].getChildMeshes();
+                    
                     niv3Set = new Array();
                     niv3.forEach(mesh=>
                                 {
@@ -719,49 +761,51 @@ var CreateScene=function()
                                         }
                                 
                                 });
+                    
 
                     redButton = scene.getMeshByID("RedButton.001");
-                    redButtonMaterial=redButton.material;
+                    redButtonMaterial = new BABYLON.StandardMaterial("material", scene);
+                    redButtonMaterial.diffuseColor = new BABYLON.Color3.Red();
+                    redButton.material = redButtonMaterial
+                 
+             
                    
 
-                    redBox = new BABYLON.StandardMaterial("material", scene);
-                    redBox.diffuseColor=new BABYLON.Color3.Black();
-
-                  //  console.log(redButton.position.x + "" + redButton.position.y + "" + redButton.position.z);
-
-
-                 	smallStep[1] = new stair(90,.2,.05,.07);
-        		 	smallStep[0] = new stair(90,.2,.05,.07);				
-				  	bigStep[0] = new stair(140,.4,.06,.1);
-				  	bigStep[1] = new stair(140,.4,.06,.1);
-       			  	smallStep[0].DynStair(-1,1.1,-5.7,0.68,Math.PI/2,-1);		    	//EM niveau2 --gauche 
-                  	smallStep[1].DynStair(-1,1.1,-5.7,0.93,Math.PI/2,-1);  	       //EM niveau2  --droite
-                  	bigStep[0].DynStair(-1,1.5,6,1.36,Math.PI/2,1);				  //EM niveau3   --gauche
-                  	bigStep[1].DynStair(-1,1.5,6,0.25,Math.PI/2,1); 
-
-                    redButtonMesh=new Mesh(redButton,redButtonMaterial);
+                    RedBisBox = new BABYLON.Color3(0.1,0,0);
+                    RedBox = new BABYLON.Color3.Red();
+              
 
 
 
 
-                    /*
-                        boxMaterial[0] = new BABYLON.StandardMaterial("material", scene);
-                        boxMaterial[1] = new BABYLON.StandardMaterial("material", scene);
-                        boxMaterial[2] = new BABYLON.StandardMaterial("material", scene);
-                        boxMaterial[0].diffuseColor= new BABYLON.Color3.Red();
-                        boxMaterial[0].specularColor= new BABYLON.Color3.Black();
 
-                        boxMaterial[1].diffuseColor= new BABYLON.Color3.Green();
-                        boxMaterial[1].specularColor= new BABYLON.Color3.Black();
+                    //smallStep[1] = new stair(90,.2,.05,.07);
+                    smallStep[0] = new stair(90,.2,.05,.07,Math.PI,escalierMecaniquePosition);                
+                   // bigStep[0] = new stair(140,.4,.06,.1);
+                  //  bigStep[1] = new stair(140,.4,.06,.1);
+                    smallStep[0].DynStair(-1,escalierMecanique.position.y,escalierMecanique.position.x,escalierMecanique.position.z,Math.PI/2,-1);               //EM niveau2 --gauche 
+                   // smallStep[1].DynStair(-1,1.1,-5.7,0.93,Math.PI/2,-1);          //EM niveau2  --droite
+                 //   bigStep[0].DynStair(-1,1.5,6,1.325,Math.PI/2,1);                  //EM niveau3   --gauche
+                 //   bigStep[1].DynStair(-1,1.5,6,0.25,Math.PI/2,1); 
 
-                        boxMaterial[2].diffuseColor= new BABYLON.Color3.Blue();
-                        boxMaterial[2].specularColor=new BABYLON.Color3.Black();
-                    */
+                    redButtonMesh=new Mesh(redButton);
+                  
+                    
+
+                    scene.clearColor = new BABYLON.Color3(.1, 1, 1);// modifier la couleur de background 
+
+
 
 
             })
         
       				var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(4, 6, 1), scene);// ajouter de light
+
+
+
+
+
+                    
 
        				return scene
 	}
@@ -795,11 +839,22 @@ scene.registerBeforeRender(function()
 	{
 		if(direction!=0)
 			{
-			  	smallStep[0].DynStair(direction,1.1,-5.7,0.68,Math.PI/2,-1);0
+			  	//smallStep[0].DynStair(direction,1.1,-5.7,0.68,Math.PI/2,-1);
+                smallStep[0].DynStair(direction,escalierMecanique.position.y,escalierMecanique.position.x,escalierMecanique.position.z,Math.PI/2,-1);
 			  	smallStep[1].DynStair(-direction,1.1,-5.7,0.93,Math.PI/2,-1);
                 bigStep[0].DynStair(direction,1.5,6,1.36,Math.PI/2,1);               //EM niveau3   --gauche
                 bigStep[1].DynStair(direction,1.5,6,0.25,Math.PI/2,1); 
 			}
+
+               scene.onPointerDown = function (evt, pickResult) {
+                                // if the click hits the ground object, we change the impact position
+                                if (pickResult.hit) {
+                                    clickedPosition.x = pickResult.pickedPoint.x;
+                                    clickedPosition.y = pickResult.pickedPoint.y;
+                                    clickedPosition.z = pickResult.pickedPoint.z;
+                                    camera1.setTarget(clickedPosition);
+                                }
+                            };
 
 
 	})
@@ -822,11 +877,14 @@ engine.runRenderLoop(function()
 
     	scene.render();
 
+
+
 	});
 
     window.addEventListener("resize", function () {
 
                 engine.resize();
+
 
             });
 
